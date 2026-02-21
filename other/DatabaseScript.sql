@@ -6,7 +6,7 @@ CREATE DATABASE FA24_SE1716_PRN231_G2_KoiShow;
 GO
 USE FA24_SE1716_PRN231_G2_KoiShow;
 
-CREATE TABLE [Contest] (
+CREATE TABLE [Contests] (
 	[ContestId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[ContestName] nvarchar(MAX) NOT NULL,
 	[Title] nvarchar(MAX) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE [Contest] (
 	PRIMARY KEY ([ContestId])
 );
 
-CREATE TABLE [New] (
+CREATE TABLE [News] (
 	[NewId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[Title] nvarchar(MAX) NOT NULL,
 	[Description] nvarchar(MAX) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE [New] (
 	PRIMARY KEY ([NewId])
 );
 
-CREATE TABLE [Animal] (
+CREATE TABLE [Animals] (
 	[AnimalId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[AnimalName] nvarchar(MAX) NOT NULL,
 	[VarietyId] int NOT NULL,
@@ -55,14 +55,14 @@ CREATE TABLE [Animal] (
 	PRIMARY KEY ([AnimalId])
 );
 
-CREATE TABLE [Variety] (
+CREATE TABLE [Varieties] (
 	[VarietyId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[Description] nvarchar(MAX) NOT NULL,
 	[Name] nvarchar(MAX) NOT NULL,
 	PRIMARY KEY ([VarietyId])
 );
 
-CREATE TABLE [Point] (
+CREATE TABLE [Points] (
 	[PointId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[ShapePoint] int,
 	[ColorPoint] int,
@@ -77,7 +77,7 @@ CREATE TABLE [Point] (
 	PRIMARY KEY ([PointId])
 );
 
-CREATE TABLE [Account] (
+CREATE TABLE [Accounts] (
 	[AccountId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[UserName] nvarchar(MAX) NOT NULL,
 	[Password] nvarchar(MAX) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE [Account] (
 	PRIMARY KEY ([AccountId])
 );
 
-CREATE TABLE [RegisterForm] (
+CREATE TABLE [RegisterForms] (
 	[RegisterFormId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[ContestId] int NOT NULL,
 	[AnimalId] int NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE [RegisterForm] (
 	PRIMARY KEY ([RegisterFormId])
 );
 
-CREATE TABLE [ContestResult] (
+CREATE TABLE [ContestResults] (
 	[ContestResultId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[ContestId] int NOT NULL,
 	[ContestResultName] nvarchar(MAX) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE [ContestResult] (
 	PRIMARY KEY ([ContestResultId])
 );
 
-CREATE TABLE [Payment] (
+CREATE TABLE [Payments] (
 	[PaymentId] int IDENTITY(1,1) NOT NULL UNIQUE,
 	[RegisterFormId] int NOT NULL,
 	[TransactionId] nvarchar(max) NOT NULL,
@@ -143,17 +143,17 @@ CREATE TABLE [Payment] (
 );
 
 
-ALTER TABLE [New] ADD CONSTRAINT [New_fk10] FOREIGN KEY ([AuthorId]) REFERENCES [Account]([AccountId]);
-ALTER TABLE [Animal] ADD CONSTRAINT [Animal_fk2] FOREIGN KEY ([VarietyId]) REFERENCES [Variety]([VarietyId]);
+ALTER TABLE [News] ADD CONSTRAINT [New_fk10] FOREIGN KEY ([AuthorId]) REFERENCES [Accounts]([AccountId]);
+ALTER TABLE [Animals] ADD CONSTRAINT [Animal_fk2] FOREIGN KEY ([VarietyId]) REFERENCES [Varieties]([VarietyId]);
 
-ALTER TABLE [Animal] ADD CONSTRAINT [Animal_fk6] FOREIGN KEY ([OwnerId]) REFERENCES [Account]([AccountId]);
+ALTER TABLE [Animals] ADD CONSTRAINT [Animal_fk6] FOREIGN KEY ([OwnerId]) REFERENCES [Accounts]([AccountId]);
 
-ALTER TABLE [Point] ADD CONSTRAINT [Point_fk5] FOREIGN KEY ([JuryId]) REFERENCES [Account]([AccountId]);
+ALTER TABLE [Points] ADD CONSTRAINT [Point_fk5] FOREIGN KEY ([JuryId]) REFERENCES [Accounts]([AccountId]);
 
-ALTER TABLE [Point] ADD CONSTRAINT [Point_fk6] FOREIGN KEY ([RegisterFormId]) REFERENCES [RegisterForm]([RegisterFormId]);
+ALTER TABLE [Points] ADD CONSTRAINT [Point_fk6] FOREIGN KEY ([RegisterFormId]) REFERENCES [RegisterForms]([RegisterFormId]);
 
-ALTER TABLE [RegisterForm] ADD CONSTRAINT [RegisterForm_fk1] FOREIGN KEY ([ContestId]) REFERENCES [Contest]([ContestId]);
+ALTER TABLE [RegisterForms] ADD CONSTRAINT [RegisterForm_fk1] FOREIGN KEY ([ContestId]) REFERENCES [Contests]([ContestId]);
 
-ALTER TABLE [RegisterForm] ADD CONSTRAINT [RegisterForm_fk2] FOREIGN KEY ([AnimalId]) REFERENCES [Animal]([AnimalId]);
-ALTER TABLE [ContestResult] ADD CONSTRAINT [ContestResult_fk1] FOREIGN KEY ([ContestId]) REFERENCES [Contest]([ContestId]);
-ALTER TABLE [Payment] ADD CONSTRAINT [Payment_fk1] FOREIGN KEY ([RegisterFormId]) REFERENCES [RegisterForm]([RegisterFormId]);
+ALTER TABLE [RegisterForms] ADD CONSTRAINT [RegisterForm_fk2] FOREIGN KEY ([AnimalId]) REFERENCES [Animals]([AnimalId]);
+ALTER TABLE [ContestResults] ADD CONSTRAINT [ContestResult_fk1] FOREIGN KEY ([ContestId]) REFERENCES [Contests]([ContestId]);
+ALTER TABLE [Payments] ADD CONSTRAINT [Payment_fk1] FOREIGN KEY ([RegisterFormId]) REFERENCES [RegisterForms]([RegisterFormId]);
