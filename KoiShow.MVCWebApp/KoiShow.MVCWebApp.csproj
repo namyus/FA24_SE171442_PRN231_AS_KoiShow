@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KoiShow.APIService\KoiShow.APIService.csproj" />
     <ProjectReference Include="..\KoiShow.Common\KoiShow.Common.csproj" />
     <ProjectReference Include="..\KoiShow.Data\KoiShow.Data.csproj" />
+    <ProjectReference Include="..\KoiShow.Service\KoiShow.Service.csproj" />
   </ItemGroup>
 
 </Project>

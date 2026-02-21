@@ -2,6 +2,7 @@ using KoiShow.APIService.Helper;
 using KoiShow.Data.Models;
 using KoiShow.Service;
 using KoiShow.Service;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
@@ -11,7 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>();
+//builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>();
+builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>(provider =>
+{
+    var optionsBuilder = new DbContextOptionsBuilder<FA24_SE1716_PRN231_G2_KoiShowContext>();
+
+    optionsBuilder.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    );
+
+    return new FA24_SE1716_PRN231_G2_KoiShowContext(optionsBuilder.Options);
+});
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
