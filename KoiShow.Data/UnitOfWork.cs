@@ -7,7 +7,7 @@ namespace KoiShow.Data;
 
 public class UnitOfWork
 {
-    private FA24_SE1716_PRN231_G2_KoiShowContext context;
+    private FA24_SE171442_PRN231_AS_KoiShowContext context;
     private ContestResultRepository contestResultRepository;
     private ContestRepository contestRepository;
     private AccountRepository accountRepository;
@@ -19,7 +19,7 @@ public class UnitOfWork
 
     public UnitOfWork()
     {
-        context ??= new FA24_SE1716_PRN231_G2_KoiShowContext();
+        context ??= new FA24_SE171442_PRN231_AS_KoiShowContext();
     }
 
     public ContestResultRepository ContestResultRepository

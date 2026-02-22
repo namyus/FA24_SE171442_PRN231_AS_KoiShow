@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>();
+builder.Services.AddScoped<FA24_SE171442_PRN231_AS_KoiShowContext>();
 
 builder.Services.AddDistributedMemoryCache();
 

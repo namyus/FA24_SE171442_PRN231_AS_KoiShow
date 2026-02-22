@@ -13,7 +13,7 @@
         {
             public PaymentRepository() { }
 
-            public PaymentRepository(FA24_SE1716_PRN231_G2_KoiShowContext context) => _context = context;
+            public PaymentRepository(FA24_SE171442_PRN231_AS_KoiShowContext context) => _context = context;
 
             public async Task<List<PaymentDtoResponse>> GetAllPaymentsAsync()
             {

@@ -15,9 +15,9 @@ namespace KoiShow.MVCWebApp.Controllers
 {
     public class ContestsController : Controller
     {
-        private readonly FA24_SE1716_PRN231_G2_KoiShowContext _context;
+        private readonly FA24_SE171442_PRN231_AS_KoiShowContext _context;
 
-        public ContestsController(FA24_SE1716_PRN231_G2_KoiShowContext context)
+        public ContestsController(FA24_SE171442_PRN231_AS_KoiShowContext context)
         {
             _context = context;
         }

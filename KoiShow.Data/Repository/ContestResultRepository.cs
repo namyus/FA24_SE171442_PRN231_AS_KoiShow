@@ -9,5 +9,5 @@ public class ContestResultRepository : GenericRepository<ContestResult>
     {
     }
 
-    public ContestResultRepository(FA24_SE1716_PRN231_G2_KoiShowContext context) => _context = context;
+    public ContestResultRepository(FA24_SE171442_PRN231_AS_KoiShowContext context) => _context = context;
 }

@@ -13,15 +13,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 //builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>();
-builder.Services.AddScoped<FA24_SE1716_PRN231_G2_KoiShowContext>(provider =>
+builder.Services.AddScoped<FA24_SE171442_PRN231_AS_KoiShowContext>(provider =>
 {
-    var optionsBuilder = new DbContextOptionsBuilder<FA24_SE1716_PRN231_G2_KoiShowContext>();
+    var optionsBuilder = new DbContextOptionsBuilder<FA24_SE171442_PRN231_AS_KoiShowContext>();
 
     optionsBuilder.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")
     );
 
-    return new FA24_SE1716_PRN231_G2_KoiShowContext(optionsBuilder.Options);
+    return new FA24_SE171442_PRN231_AS_KoiShowContext(optionsBuilder.Options);
 });
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 {

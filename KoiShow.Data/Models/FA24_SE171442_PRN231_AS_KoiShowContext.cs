@@ -8,13 +8,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace KoiShow.Data.Models;
 
-public class FA24_SE1716_PRN231_G2_KoiShowContext : DbContext
+public class FA24_SE171442_PRN231_AS_KoiShowContext : DbContext
 {
-    public FA24_SE1716_PRN231_G2_KoiShowContext()
+    public FA24_SE171442_PRN231_AS_KoiShowContext()
     {
     }
 
-    public FA24_SE1716_PRN231_G2_KoiShowContext(DbContextOptions<FA24_SE1716_PRN231_G2_KoiShowContext> options)
+    public FA24_SE171442_PRN231_AS_KoiShowContext(DbContextOptions<FA24_SE171442_PRN231_AS_KoiShowContext> options)
         : base(options)
     {
     }
@@ -52,7 +52,7 @@ public class FA24_SE1716_PRN231_G2_KoiShowContext : DbContext
     //=> optionsBuilder.UseSqlServer(GetConnectionString("DefaultConnection")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //    => optionsBuilder.UseSqlServer("Data Source=LUAN;Initial Catalog=FA24_SE1716_PRN231_G2_KoiShow;User ID=sa;Password=12345;Encrypt=False");
+    //    => optionsBuilder.UseSqlServer("Data Source=LUAN;Initial Catalog=FA24_SE171442_PRN231_AS_KoiShow;User ID=sa;Password=12345;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

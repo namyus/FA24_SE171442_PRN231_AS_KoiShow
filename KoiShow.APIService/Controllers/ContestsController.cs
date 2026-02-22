@@ -16,7 +16,7 @@ namespace KoiShow.APIService.Controllers
     [ApiController]
     public class ContestsController : ControllerBase
     {
-        //private readonly FA24_SE1716_PRN231_G2_KoiShowContext _context;
+        //private readonly FA24_SE171442_PRN231_AS_KoiShowContext _context;
         private readonly ContestService _contestService;
 
         public ContestsController(ContestService contestService) => _contestService = contestService;

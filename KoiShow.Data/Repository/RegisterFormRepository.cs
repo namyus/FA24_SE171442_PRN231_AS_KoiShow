@@ -9,7 +9,7 @@ namespace KoiShow.Data.Repository
     {
         public RegisterFormRepository() { }
 
-        public RegisterFormRepository(FA24_SE1716_PRN231_G2_KoiShowContext context) => _context = context;
+        public RegisterFormRepository(FA24_SE171442_PRN231_AS_KoiShowContext context) => _context = context;
 
     }
 }

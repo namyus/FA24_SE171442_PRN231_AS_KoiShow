@@ -8,6 +8,6 @@ namespace KoiShow.Data.Repository
     {
         public PointRepository() { }
 
-        public PointRepository(FA24_SE1716_PRN231_G2_KoiShowContext context) => _context = context;
+        public PointRepository(FA24_SE171442_PRN231_AS_KoiShowContext context) => _context = context;
     }
 }

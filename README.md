@@ -39,7 +39,7 @@ This project is primarily a backend service developed in .NET, using a layered a
 1. **Clone the repository**
    ```bash
    git clone https://github.com/namyus/FA24_SE171442_PRN231_AS_KoiShow.git
-   cd FA24_SE1716_PRN231_G2_KoiShow
+   cd FA24_SE171442_PRN231_AS_KoiShow
    ```
 
 2. **Set up the database**

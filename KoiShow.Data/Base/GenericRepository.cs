@@ -6,14 +6,14 @@ namespace KoiShow.Data.Base;
 
 public class GenericRepository<T> where T : class
 {
-    protected FA24_SE1716_PRN231_G2_KoiShowContext _context;
+    protected FA24_SE171442_PRN231_AS_KoiShowContext _context;
 
     public GenericRepository()
     {
-        _context ??= new FA24_SE1716_PRN231_G2_KoiShowContext();
+        _context ??= new FA24_SE171442_PRN231_AS_KoiShowContext();
     }
 
-    public GenericRepository(FA24_SE1716_PRN231_G2_KoiShowContext context)
+    public GenericRepository(FA24_SE171442_PRN231_AS_KoiShowContext context)
     {
         _context = context;
     }
